@@ -1,6 +1,6 @@
 
 // Params 
-param location string = resourceGroup().location
+param location string = 'northeurope'
 param apiManagementName string 
 param containerAppsEnvName string 
 param storageAccountName string 

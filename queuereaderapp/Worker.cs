@@ -49,6 +49,7 @@ namespace QueueWorker
                         }
 
                         logger.LogInformation("This is a new log message!");
+                        logger.LogInformation("This is a new log message! "+message.Body);
 
                         await httpClient.PostAsync(storeUrl, JsonContent.Create(new { Id = message.MessageId, Message = message.Body?.ToString() }), stoppingToken);
 
