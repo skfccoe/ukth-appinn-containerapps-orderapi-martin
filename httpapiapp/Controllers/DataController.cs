@@ -33,7 +33,7 @@ namespace HttpApi.Controllers
         {
             try
             {
-                await queueClient.SendMessageAsync(Guid.NewGuid().ToString());
+                await queueClient.SendMessageAsync(DateTimeOffset.Now.ToString() + " -- " + message);
 
                 Ok();
             }
