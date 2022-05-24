@@ -68,3 +68,12 @@ az containerapp github-action add \
   --service-principal-client-secret $spClientSecret \
   --service-principal-tenant-id $tenantid \
   --token $ghToken
+
+
+gwtoken="GatewayKey gw-01&202206231438&Utm2deKjsRuUnX75NulYEtcYbZ8hkzKUQwMG1ErcnbQ7DS1xmC/PdNxvZZuPBo06AUK1KoGsaTLAPxBOJYXuCQ=="
+storageaccount=asd7ltpj5alhqye6
+
+az deployment group create -g $resourceGroup -f v5_template.bicep -p apiManagementName=${name}-apim containerAppsEnvName=$containerAppEnv storageAccountName=$storageaccount selfHostedGatewayToken="$gwtoken"
+
+
+apikey=a51b4247a78f4ad5ac9219140aa87477
